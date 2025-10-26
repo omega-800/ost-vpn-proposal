@@ -34,7 +34,7 @@ The OST-VPN Solution currently relies on @azuread (@saml) authentication for Cis
 
 = Argumentation 
 
-Educational institutions have a responsibility to provide information in a neutral and non-discriminatory manner, thereby establishing a standart for @oer, open research and the free exchange of information @BOSB. This responsibility can only be fulfilled when accessibility for all is guaranteed through the implementation of @foss @Hartwagner. 
+Universities can play an exemplary role by using and contributing to FOSS through advisory, analytical, and evaluative activities. They possess unique forms of expertise and a degree of independence that can add significant value. These activities can indeed foster learning and improvement in the spirit of the Humboldtian educational ideal. Collaboration with the wider FOSS community is essential to ensure genuine openness, mutual learning, and innovation. In addition, sovereignty, data security, and inclusion should be key priorities. Educational institutions are key in providing information in a neutral and non-discriminatory manner, thereby establishing a standart for @oer, open research and the free exchange of information @BOSB. This responsibility can only be fulfilled when accessibility for all is guaranteed through the implementation of @foss @Hartwagner. 
 
 While the management of services via Azure AD may offer conveniences, the reliance on a multi-trillion-dollar corporation's closed-source software presents a multitude of risks and worries particularily in, but not limited to, educational and research contexts. These risks encompass: 
 
