@@ -1,0 +1,48 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1760524057,
+        "narHash": "sha256-EVAqOteLBFmd7pKkb0+FIUyzTF61VKi7YmvP1tw4nEw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "544961dfcce86422ba200ed9a0b00dd4b1486ec5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "typix": "typix"
+      }
+    },
+    "typix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1761122907,
+        "narHash": "sha256-mlsMnRPQhp3fI0yo2H3CwNmvh+P/82QAdnx3xSZfbHE=",
+        "owner": "loqusion",
+        "repo": "typix",
+        "rev": "5d5d5d701f2423a713f38a66e631cca73d79c501",
+        "type": "github"
+      },
+      "original": {
+        "owner": "loqusion",
+        "repo": "typix",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
