@@ -36,7 +36,7 @@ The OST-VPN Solution currently relies on @azuread (@saml) authentication for Cis
 
 Educational institutions have a responsibility to provide information in a neutral and non-discriminatory manner, thereby establishing a standart for @oer, open research and the free exchange of information @BOSB. This responsibility can only be fulfilled when accessibility for all is guaranteed through the implementation of @foss @Hartwagner. 
 
-While the management of services vie Azure AD may offer conveniences, the reliance on a multi-trillion-dollar corporation's closed-source software (Azure AD) presents a multitude of risks and worries particularily in, but not limited to, educational and research contexts. These risks encompass: 
+While the management of services via Azure AD may offer conveniences, the reliance on a multi-trillion-dollar corporation's closed-source software presents a multitude of risks and worries particularily in, but not limited to, educational and research contexts. These risks encompass: 
 
 - Vendor Lock-In: Dependency on proprietary platforms limits flexibility and adaptability. @kelch
 - Incompatibility with Legacy Hardware: Potential exclusion of users employing older technologies. @bildungdigital
