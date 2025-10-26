@@ -83,9 +83,6 @@ By integrating additional authentication options, one can reduce dependency on p
   #glossary_entry("OER", [
     Open Educational Resources
   ]) <oer>
-  #glossary_entry("BYOD", [
-    Bring Your Own Device
-  ]) <byod>
   #glossary_entry("OTP", [
     One Time Password
   ]) <otp>
