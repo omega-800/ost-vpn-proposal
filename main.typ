@@ -45,7 +45,7 @@
     text(12pt, "Fynn Gächter, Marco Kuoni"), 
     v(0.5em), 
     text("Supporters"), 
-    text(12pt, "Fynn Gächter, Marco Kuoni"),
+    text(12pt, "Fynn Gächter, Marco Kuoni, Oliver Clerc, Giuliano Gianola, Lukas Hunziker"),
   ),
 )
 
