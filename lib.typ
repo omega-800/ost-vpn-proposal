@@ -2,8 +2,8 @@
 #let language = "en"
 #let fsize = 11pt
 #let columnsnr = 1
-#let author = "Georgiy Shevoroshkin"
-#let title = "Template"
+#let author = "Georgiy Chirokikh Shevoroshkin"
+#let title = "Proposal for changing the OST-VPN 2FA"
 #let font = (
   font: "Arimo Nerd Font", lang: language, region: "ch", size: fsize, fill: rgb("000000"),
 )
@@ -24,22 +24,6 @@
   #v(0.5em)
 ]
 
-#set document(author: author, title: title, date: datetime.today())
-#set page(flipped: false, columns: columnsnr, margin: if (columnsnr < 2) {
-  (top: 2cm, left: 1.5cm, right: 1.5cm, bottom: 2cm)
-} else {
-  0.5cm
-}, footer: context[
-  #set text(font: font.font, size: 0.9em)
-  #title
-  #h(1fr)
-  #languages.at(language).page #counter(page).display()
-], header: context[
-  #set text(font: font.font, size: 0.9em)
-  #author
-  #h(1fr)
-  #datetime.today().display(dateformat)
-])
 #set columns(columnsnr, gutter: 2em)
 #set text(..font)
 #set enum(numbering: "1.a)")
