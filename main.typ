@@ -1,5 +1,6 @@
 #import "./lib.typ": *
 
+#let supporter = (name, email) => ([#name],[#link("mailto:"+email)])
 #show table.cell.where(y: 0): emph
 #show math.equation: set text(font: "Fira Math")
 #show raw: set text(font: "Fira Code")
@@ -22,6 +23,15 @@
     #underline(offset: 0.7mm, stroke: link-underline, it)
   ], fill: link-background)
 }
+#set table(
+  stroke: (x, y) => (
+  left: if x > 0 { 0.07em },
+  top: if y > 0 { 0.07em },
+),
+  inset: 0.5em,
+  gutter: auto,
+  fill: none,
+)
 
 #set document(author: author, title: title, date: datetime.today())
 #set page(flipped: false, columns: 1, margin: 2cm)
@@ -43,9 +53,6 @@
     v(0.5em), 
     text("Contributors"), 
     text(12pt, "Fynn Gächter, Marco Kuoni"), 
-    v(0.5em), 
-    text("Supporters"), 
-    text(12pt, "Fynn Gächter, Marco Kuoni, Oliver Clerc, Giuliano Gianola, Lukas Hunziker"),
   ),
 )
 
@@ -146,6 +153,32 @@ in a manner that respects their preferences and needs.
 
 #pagebreak()
 
+= Supporters
+
+Many thanks go out to all of the honorable supporters of this Project, which include
+
+#figure(
+  table(columns:(auto,1fr),
+    table.header([*Name*], [*Email*]),
+    ..supporter("Fynn Gächter", "fynn.gaechter@ost.ch"),
+    ..supporter("Marco Kuoni", "marco.kuoni@ost.ch"),
+    ..supporter("Oliver Clerc", "oliver.clerc@ost.ch"),
+    ..supporter("Giuliano Gianola", "giuliano.gianola@ost.ch"),
+    ..supporter("Lukas Hunziker", "lukas.hunziker@ost.ch"),
+    ..supporter("Jasmin Fässler", "jasmin.faessler@ost.ch"),
+    ..supporter("Edoardo Balsamo", "edoardo.balsamo@ost.ch"),
+    ..supporter("Nico Michael Rudolph", "nico.rudolph@ost.ch"),
+  ), 
+  caption: "Supporters"
+)
+
+
+#pagebreak()
+
+#bibliography("citations.bib")
+
+#pagebreak()
+
 = Glossary
 
 #let glossary_entry(name, description) = {
@@ -186,8 +219,12 @@ in a manner that respects their preferences and needs.
     Azure Active Directory
   ]) <azuread>
 ]
-
 #outline_glossary()
 
 #pagebreak()
-#bibliography("citations.bib")
+
+= Tables
+
+#outline(title: none, target: figure.where(kind: table))
+
+#pagebreak()
