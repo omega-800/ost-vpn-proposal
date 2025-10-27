@@ -168,6 +168,7 @@ Many thanks go out to all of the honorable supporters of this Project, which inc
     ..supporter("Jasmin Fässler", "jasmin.faessler@ost.ch"),
     ..supporter("Edoardo Balsamo", "edoardo.balsamo@ost.ch"),
     ..supporter("Nico Michael Rudolph", "nico.rudolph@ost.ch"),
+    ..supporter("Raphael Das Gupta", "raphael.dasgupta@ost.ch"),
   ), 
   caption: "Supporters"
 )
