@@ -167,6 +167,7 @@ Many thanks go out to all of the honorable supporters of this Project, which inc
     ..supporter("Carina Schmitt", "carina.schmitt@ost.ch"),
     ..supporter("Claude Bregenzer", "claude.bregenzer@ost.ch"),
     ..supporter("Edoardo Balsamo", "edoardo.balsamo@ost.ch"),
+    ..supporter("Elia Schenker", "elia.schenker@ost.ch"),
     ..supporter("Fynn Gächter", "fynn.gaechter@ost.ch"),
     ..supporter("Giuliano Gianola", "giuliano.gianola@ost.ch"),
     ..supporter("Jasmin Fässler", "jasmin.faessler@ost.ch"),
@@ -177,6 +178,7 @@ Many thanks go out to all of the honorable supporters of this Project, which inc
     ..supporter("Oliver Clerc", "oliver.clerc@ost.ch"),
     ..supporter("Raphael Das Gupta", "raphael.dasgupta@ost.ch"),
     ..supporter("Samuel Meuli", "samuel.meuli@ost.ch"),
+    ..supporter("Simon Böni", "simon.boeni@ost.ch"),
   ), 
   caption: "Supporters"
 )
