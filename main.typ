@@ -135,21 +135,25 @@ required, though it is recommended @ostauthvpn. The flexibility enables the use
 of provider- and device-agnostic @otp software, promoting inclusivity for
 individuals who choose FOSS out of ethical or personal reasons. However, several
 aspects of the current OST infrastructure still restrict this possibility,
-notably in areas such as email and VPN authentication.
+notably in areas such as email and authentication.
 
 = Proposal
 
 Transitioning the entire Microsoft-based ecosystem at OST University to a fully
 open-source model is undoubtedly a monumental undertaking. However, introducing
-the capability to connect to the VPN through alternative methods beyond AzureAD
-would represent a significant first step in the right direction. This change
-would support inclusivity and align with the institution's commitment to
-openness and accessibility.
+the capability to connect to the VPN and other Services like the wiki through 
+alternative methods beyond AzureAD would represent a significant first step in 
+the right direction. This change would support inclusivity and align with the 
+institution's commitment to openness and accessibility.
 
 By integrating additional authentication options, one can reduce dependency on
 proprietary technologies and mitigate the associated risks. This effort not only
 promotes ethical practices but also empowers users to engage with the services
 in a manner that respects their preferences and needs.
+
+Without changing the full identity infrastructure it would for Example still be 
+possible to implement OpenID Connect @openid (based on OAuth2.0 @OAuthRFC) in 
+conjunction with Azure AD. 
 
 #pagebreak()
 
@@ -158,17 +162,21 @@ in a manner that respects their preferences and needs.
 Many thanks go out to all of the honorable supporters of this Project, which include
 
 #figure(
-  table(columns:(auto,1fr),
+  table(columns:(1fr,1fr),
     table.header([*Name*], [*Email*]),
-    ..supporter("Fynn Gächter", "fynn.gaechter@ost.ch"),
-    ..supporter("Marco Kuoni", "marco.kuoni@ost.ch"),
-    ..supporter("Oliver Clerc", "oliver.clerc@ost.ch"),
-    ..supporter("Giuliano Gianola", "giuliano.gianola@ost.ch"),
-    ..supporter("Lukas Hunziker", "lukas.hunziker@ost.ch"),
-    ..supporter("Jasmin Fässler", "jasmin.faessler@ost.ch"),
+    ..supporter("Carina Schmitt", "carina.schmitt@ost.ch"),
+    ..supporter("Claude Bregenzer", "claude.bregenzer@ost.ch"),
     ..supporter("Edoardo Balsamo", "edoardo.balsamo@ost.ch"),
+    ..supporter("Fynn Gächter", "fynn.gaechter@ost.ch"),
+    ..supporter("Giuliano Gianola", "giuliano.gianola@ost.ch"),
+    ..supporter("Jasmin Fässler", "jasmin.faessler@ost.ch"),
+    ..supporter("Lukas Hunziker", "lukas.hunziker@ost.ch"),
+    ..supporter("Marco Kuoni", "marco.kuoni@ost.ch"),
+    ..supporter("Nathanael Fässler", "nathanael.faessler@ost.ch"),
     ..supporter("Nico Michael Rudolph", "nico.rudolph@ost.ch"),
+    ..supporter("Oliver Clerc", "oliver.clerc@ost.ch"),
     ..supporter("Raphael Das Gupta", "raphael.dasgupta@ost.ch"),
+    ..supporter("Samuel Meuli", "samuel.meuli@ost.ch"),
   ), 
   caption: "Supporters"
 )
