@@ -1,0 +1,16 @@
+@startuml
+
+actor "**User**\nPeople that need access to protected\nservices (Student, OST Employee, etc.)" as User 
+
+component [**Identity and Access Management (eg. Keycloak)**\nMaps specific groups of users to predefined\nroles and issues the access token] as Auth
+
+component [**Identity Provider (EntraID)**\nAuthenticates the user and\nissues the id token] as IdProvider 
+
+component [**Service**\nService our resource the\nUser wants to access] as Service #lightblue
+
+User -left-> Auth : Authorizes given the id token\n[OpenID Connect]
+Auth --> User : Returns the access token\n[OpenID Connect]
+User -up-> IdProvider : Authenticates\n[OpenID Connect]
+IdProvider --> User : Returns the id token\n[OpenID Connect]
+User -right-> Service : Requests access given a valid access token
+@enduml

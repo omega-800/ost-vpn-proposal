@@ -3,7 +3,7 @@
 #let fsize = 11pt
 #let columnsnr = 1
 #let author = "Georgiy Chirokikh Shevoroshkin"
-#let title = "Proposal for changing the OST-VPN 2FA"
+#let title = "Proposal for changing the OST Auth solution"
 #let font = (
   font: "Arimo Nerd Font", lang: language, region: "ch", size: fsize, fill: rgb("000000"),
 )
