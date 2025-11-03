@@ -47,18 +47,33 @@
             ];
             virtualPaths = [ ];
           };
+          inherit (pkgs) lib;
           extraArgs = {
-            src = typixLib.cleanTypstSource ./.;
+            src = lib.cleanSourceWith {
+              src = lib.cleanSource ./.;
+              filter =
+                path: type:
+                let
+                  hasAcceptedSuffix = builtins.any (lib.flip lib.hasSuffix path) [
+                    ".typ"
+                    ".bib"
+                    ".png"
+                    ".md"
+                  ];
+                  isSpecialFile = builtins.elem (builtins.baseNameOf path) [
+                    "typst.toml"
+                    "metadata.toml"
+                  ];
+                in
+                builtins.any lib.id [
+                  (type == "directory")
+                  hasAcceptedSuffix
+                  isSpecialFile
+                ];
+            };
             unstable_typstPackages = [ ];
           };
-          fs = pkgs.lib.fileset;
-          sources = pkgs.lib.pipe ./. [
-            (fs.fileFilter (f: f.name == "doc.typ"))
-            fs.toList
-            (map builtins.toString)
-            (map (n: builtins.match ".*/([^/]+/[^/]+.typ)$" n))
-            (map (n: builtins.elemAt n 0))
-          ];
+          sources = ["vpn.typ" "main.typ"];
           watchScriptsPerDoc = map (
             typstSource:
             typixLib.watchTypstProject (
