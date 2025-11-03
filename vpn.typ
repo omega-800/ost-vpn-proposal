@@ -1,8 +1,10 @@
 #import "./lib.typ": *
 
-#show: project.with(
-  title: "Proposal for changing the OST VPN", subtitle: "Striving for a more open educational environment",
-)
+#show: project.with(title: "Proposal for changing the OST VPN")
+
+= Notice
+
+This document is incomplete and a work in progress.
 
 = Context
 
@@ -16,6 +18,8 @@ protocol, such as openconnect @openconnect.
 This Proposal is based on the "Proposal for changing the OST Auth solution".
 Therefore, all of the talking points regarding open- and closed-source software
 apply to the arguments for an alternative VPN implementation as well.
+
+Multiple instances of students or professors asking for an alternative, open-source solution have been documented /*@strongswan*/ .
 
 = Proposal
 

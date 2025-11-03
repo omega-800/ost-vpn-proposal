@@ -1,8 +1,6 @@
 #import "./lib.typ": *
 
-#show: project.with(
-  title: "Proposal for changing the OST Auth solution", subtitle: "Striving for a more open educational environment",
-)
+#show: project.with(title: "Proposal for changing the OST Auth solution")
 
 = Context
 

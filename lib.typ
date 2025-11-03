@@ -75,7 +75,8 @@
   ]) <it>
 ]
 
-#let project(title: "", subtitle: "", body) = {
+#let project(title: "", body) = {
+ let subtitle = "Striving for a more open educational environment"
   show table.cell.where(y: 0): emph
   show math.equation: set text(font: "Fira Math")
   show raw: set text(font: "Fira Code")
