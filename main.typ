@@ -1,18 +1,17 @@
 #import "./lib.typ": *
 
-#show: project.with(title: "Proposal for changing the OST Auth solution", subtitle: "Striving for a more open educational environment")
+#show: project.with(
+  title: "Proposal for changing the OST Auth solution", subtitle: "Striving for a more open educational environment",
+)
 
 = Context
 
-The OST Auth Solution currently relies on @entraid (@saml) for
-services such as the
+The OST Auth Solution currently relies on @entraid (@saml) for services such as
+the
 #link("https://wiki.ost.ch", "Confluence wiki"),
 #link("https://unterricht.ost.ch", "\"Unterricht\" webservice") and Cisco
-SSL-VPN. Users can connect to the @vpn through the recommended cisco secure
-client @ostauthvpn or any compatible client supporting the AnyConnect protocol,
-such as openconnect @openconnect. EntraID, developed by Microsoft, provides
-identity management and facilitates integration with the broader Microsoft
-ecosystem.
+SSL-VPN. EntraID, developed by Microsoft, provides identity management and
+facilitates integration with the broader Microsoft ecosystem.
 
 = Argumentation
 
@@ -106,7 +105,7 @@ standardized auth solution for the multitude of services which OST provides.
 = Future considerations
 
 Once the services requiring authentication and authorization are configured to
-utilize an open source IAM framework like Keycloak, the full identity
-management process can be more easily taken over from EntraID by said framework.
-Further steps would include data migration, policy configuration, testing,
-monitoring and finally decomissioning EntraID.
+utilize an open source IAM framework like Keycloak, the full identity management
+process can be more easily taken over from EntraID by said framework. Further
+steps would include data migration, policy configuration, testing, monitoring
+and finally decomissioning EntraID.
