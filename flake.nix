@@ -51,12 +51,36 @@
             src = typixLib.cleanTypstSource ./.;
             unstable_typstPackages = [ ];
           };
+          fs = pkgs.lib.fileset;
+          sources = pkgs.lib.pipe ./. [
+            (fs.fileFilter (f: f.name == "doc.typ"))
+            fs.toList
+            (map builtins.toString)
+            (map (n: builtins.match ".*/([^/]+/[^/]+.typ)$" n))
+            (map (n: builtins.elemAt n 0))
+          ];
+          watchScriptsPerDoc = map (
+            typstSource:
+            typixLib.watchTypstProject (
+              commonArgs
+              // {
+                inherit typstSource;
+                typstOutput = (pkgs.lib.removeSuffix ".typ" typstSource) + ".pdf";
+              }
+            )
+          ) sources;
         in
         {
           inherit typixLib commonArgs extraArgs;
           build-drv = typixLib.buildTypstProject (commonArgs // extraArgs);
           build-script = typixLib.buildTypstProjectLocal (commonArgs // extraArgs);
           watch-script = typixLib.watchTypstProject commonArgs;
+          watch-all = pkgs.writeShellApplication {
+            text = "(trap 'kill 0' SIGINT; ${
+              pkgs.lib.concatMapStringsSep " & " (s: "${s}/bin/typst-watch") watchScriptsPerDoc
+            })";
+            name = "typst-watch-all";
+          };
         };
     in
     {
