@@ -73,7 +73,10 @@
             };
             unstable_typstPackages = [ ];
           };
-          sources = ["vpn.typ" "main.typ"];
+          sources = [
+            "vpn.typ"
+            "main.typ"
+          ];
           watchScriptsPerDoc = map (
             typstSource:
             typixLib.watchTypstProject (
@@ -122,6 +125,7 @@
           inherit (typixPkgs pkgs)
             watch-script
             build-script
+            watch-all
             commonArgs
             typixLib
             ;
@@ -130,6 +134,7 @@
           default = typixLib.devShell {
             inherit (commonArgs) fontPaths virtualPaths;
             packages = [
+              watch-all
               build-script
               watch-script
               pkgs.typstfmt

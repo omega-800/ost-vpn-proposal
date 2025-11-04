@@ -27,53 +27,31 @@
 #let link-underline = luma(30)
 #let link-background = rgb("#fafafa")
 
-#let glossary_entry(name, description) = {
+#let glossary-entry(name, description) = {
   figure([
     #grid(columns: (3fr, 8fr), gutter: 5mm, [
       #align(left, text(size: 12pt, [*#name*]))
     ], align(left, description))
     #line(length: 100%, stroke: 0.5pt + rgb("#c4c4c4"))
-  ], kind: "glossary_entry", supplement: name)
+  ], kind: "glossary-entry", supplement: name)
 }
-
-#let outline_glossary() = [
-  #glossary_entry("OSS", [
-    Open Source Software
-  ]) <oss>
-  #glossary_entry("OER", [
-    Open Educational Resources
-  ]) <oer>
-  #glossary_entry("OTP", [
-    One Time Password
-  ]) <otp>
-  #glossary_entry("FOSS", [
-    Free and Open Source Software
-  ]) <foss>
-  #glossary_entry("SSO", [
-    Single Sign-On
-  ]) <sso>
-  #glossary_entry("SAMLv2", [
-    Security Assertion Markup Language 2.0
-  ]) <saml>
-  #glossary_entry("SSL", [
-    Secure Sockets Layer
-  ]) <ssl>
-  #glossary_entry("VPN", [
-    Virtual Private Network
-  ]) <vpn>
-  #glossary_entry(
-    "EntraID", [
-      Microsoft Entra ID (formerly known as Microsoft Azure Active Directory or
-      EntraID)
-    ],
-  ) <entraid>
-  #glossary_entry("IAM", [
-    Identity and Access Management
-  ]) <iam>
-  #glossary_entry("IT", [
-    Information Technology
-  ]) <it>
-]
+#let glossary = (
+  OSS: ( desc: [Open Source Software], link: <oss>),
+  OER:(desc: [ Open Educational Resources ],link: <oer>),
+  OTP:(desc: [ One Time Password ],link: <otp>),
+  FOSS:(desc: [ Free and Open Source Software ],link: <foss>),
+  SSO:(desc: [ Single Sign-On ],link: <sso>),
+  SAMLv2:(desc: [ Security Assertion Markup Language 2.0 ],link: <saml>),
+  SSL:(desc: [ Secure Sockets Layer ],link: <ssl>),
+  VPN:(desc: [ Virtual Private Network ],link: <vpn>),
+  EntraID:(desc: [ Microsoft Entra ID (formerly known as Microsoft Azure Active Directory or Azure AD) ],link: <entraid>),
+  IAM:(desc: [ Identity and Access Management ],link: <iam>),
+  IT:(desc: [ Information Technology ],link: <it>),
+)
+#let g = (k) => link(glossary.at(k).link, k)
+#let outline-glossary = () => glossary.pairs().map(((k,v)) => 
+  [#glossary-entry(k, v.desc) #v.link]
+).join()
 
 #let project(title: "", body) = {
  let subtitle = "Striving for a more open educational environment"
@@ -96,17 +74,17 @@
       #underline(offset: 0.7mm, stroke: link-underline, it)
     ], fill: link-background)
   }
-  set table(
-    stroke: (x, y) => (left: if x > 0 { 0.07em }, top: if y > 0 { 0.07em }), inset: 0.5em, gutter: auto, fill: none,
-  )
   set columns(columnsnr, gutter: 2em)
   set text(..font)
   set enum(numbering: "1.a)")
-  set table.cell(breakable: false)
   set quote(block: true, quotes: true)
   set par(justify: true)
   set document(author: author, title: title, date: datetime.today())
   set page(flipped: false, columns: 1, margin: 2cm)
+  set table.cell(breakable: false)
+  set table(
+    stroke: (x, y) => (left: if x > 0 { 0.07em }, top: if y > 0 { 0.07em }), inset: 0.5em, gutter: auto, fill: none,
+  )
 
   place(
     top + left, dx: -35mm, dy: 5mm, image("resources/Background.png", width: 245mm, height: auto, fit: "cover"),
@@ -154,7 +132,26 @@
 
   figure(
     table(
-      columns: (1fr, 1fr), table.header([*Name*], [*Email*]), ..supporter("Carina Schmitt", "carina.schmitt@ost.ch"), ..supporter("Claude Bregenzer", "claude.bregenzer@ost.ch"), ..supporter("Edoardo Balsamo", "edoardo.balsamo@ost.ch"), ..supporter("Elia Schenker", "elia.schenker@ost.ch"), ..supporter("Fynn Gächter", "fynn.gaechter@ost.ch"), ..supporter("Gioele Petrillo", "gioele.petrillo@ost.ch"), ..supporter("Giuliano Gianola", "giuliano.gianola@ost.ch"), ..supporter("Jasmin Fässler", "jasmin.faessler@ost.ch"), ..supporter("Lukas Hunziker", "lukas.hunziker@ost.ch"), ..supporter("Marco Kuoni", "marco.kuoni@ost.ch"), ..supporter("Nathanael Fässler", "nathanael.faessler@ost.ch"), ..supporter("Nico Michael Rudolph", "nico.rudolph@ost.ch"), ..supporter("Oliver Clerc", "oliver.clerc@ost.ch"), ..supporter("Raphael Das Gupta", "raphael.dasgupta@ost.ch"), ..supporter("Samuel Meuli", "samuel.meuli@ost.ch"), ..supporter("Simon Böni", "simon.boeni@ost.ch"), ..supporter("Ramon Bister", "ramon.bister@ost.ch"),
+      columns: (1fr, 1fr), table.header([*Name*], [*Email*]), 
+      ..supporter("Carina Schmitt", "carina.schmitt@ost.ch"), 
+      ..supporter("Claude Bregenzer", "claude.bregenzer@ost.ch"), 
+      ..supporter("Edoardo Balsamo", "edoardo.balsamo@ost.ch"), 
+      ..supporter("Elia Schenker", "elia.schenker@ost.ch"), 
+      ..supporter("Florian Bruhin", "florian.bruhin@ost.ch"), 
+      ..supporter("Fynn Gächter", "fynn.gaechter@ost.ch"), 
+      ..supporter("Gioele Petrillo", "gioele.petrillo@ost.ch"), 
+      ..supporter("Giuliano Gianola", "giuliano.gianola@ost.ch"), 
+      ..supporter("Jasmin Fässler", "jasmin.faessler@ost.ch"), 
+      ..supporter("Lukas Hunziker", "lukas.hunziker@ost.ch"), 
+      ..supporter("Marco Kuoni", "marco.kuoni@ost.ch"), 
+      ..supporter("Nathanael Fässler", "nathanael.faessler@ost.ch"), 
+      ..supporter("Nico Michael Rudolph", "nico.rudolph@ost.ch"), 
+      ..supporter("Oliver Clerc", "oliver.clerc@ost.ch"), 
+      ..supporter("Raphael Das Gupta", "raphael.dasgupta@ost.ch"), 
+      ..supporter("Samuel Meuli", "samuel.meuli@ost.ch"), 
+      ..supporter("Simon Böni", "simon.boeni@ost.ch"), 
+      ..supporter("Stefan F. Keller", "stefan.keller@ost.ch"), 
+      ..supporter("Ramon Bister", "ramon.bister@ost.ch"),
     ), caption: "Supporters",
   )
 
@@ -162,7 +159,7 @@
 
   [= Glossary]
 
-  outline_glossary()
+  outline-glossary()
 
   pagebreak()
 

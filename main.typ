@@ -4,7 +4,7 @@
 
 = Context
 
-The OST Auth Solution currently relies on @entraid (@saml) for services such as
+The OST Auth Solution currently relies on #g("EntraID") (#g("SAMLv2")) for services such as
 the
 #link("https://wiki.ost.ch", "Confluence wiki"),
 #link("https://unterricht.ost.ch", "\"Unterricht\" webservice") and Cisco
@@ -13,7 +13,7 @@ facilitates integration with the broader Microsoft ecosystem.
 
 = Argumentation
 
-Universities can play an exemplary role by using and contributing to @foss
+Universities can play an exemplary role by using and contributing to #g("FOSS")
 through advisory, analytical, and evaluative activities. They possess unique
 forms of expertise and a degree of independence that can add significant value.
 These activities can indeed foster learning and improvement in the spirit of the
@@ -21,7 +21,7 @@ Humboldtian educational ideal. Collaboration with the wider FOSS community is
 essential to ensure genuine openness, mutual learning, and innovation. In
 addition, sovereignty, data security, and inclusion should be key priorities.
 Educational institutions are key in providing information in a neutral and
-non-discriminatory manner, thereby establishing a standart for @oer, open
+non-discriminatory manner, thereby establishing a standard for #g("OER"), open
 research and the free exchange of information @BOSB. This responsibility can
 only be fulfilled when accessibility for all is guaranteed through the
 implementation of FOSS @Hartwagner.
@@ -53,7 +53,7 @@ data harvest and monopoly position of the corporation.
 The adoption of on-premise and open-source software solutions ensures the
 sovereignty and security of end-user data. Users are more likely to develop
 advanced technical skills and engage in collaborative learning, as well as a
-heightened awareness of ethical software practices and responsible @it
+heightened awareness of ethical software practices and responsible #g("IT")
 behaviors. Moreover, the organizing body gains comprehensive control over its
 data and infrastructure, enabling the development of tailored solutions. This
 approach enhances risk management and fosters an environment of active
@@ -62,7 +62,7 @@ solutions built upon it @BOSB.
 
 To showcase a positive example, the Microsoft Authenticator app is not required
 for client authentication, though it is recommended @ostauthvpn. This
-flexibility enables the use of provider- and device-agnostic @otp software,
+flexibility enables the use of provider- and device-agnostic #g("OTP") software,
 promoting inclusivity for individuals who choose FOSS out of ethical or personal
 reasons. However, several aspects of the current OST infrastructure still
 restrict this possibility, notably in areas such as email and authentication. By
@@ -76,7 +76,7 @@ in a manner that respects their preferences and needs.
 Transitioning the entire Microsoft-based ecosystem at OST University to a fully
 open-source model is undoubtedly a monumental undertaking. However, introducing
 the capability to connect to services like the VPN or wiki through alternative
-authentication methods beyond EntraID @sso would represent a significant first
+authentication methods beyond EntraID #g("SSO") would represent a significant first
 step in the right direction. This change would align with the institution's
 commitment to openness and accessibility and create a path for an independent
 and inclusive future.
@@ -93,7 +93,7 @@ A depiction of the user accessing a service using this method is illustrated in
   image("keycloak_auth_diagram.png"), caption: "Service access and auth process",
 ) <fig1>
 
-Although alternative open-source @iam projects like Shibboleth @shibboleth or
+Although alternative open-source #g("IAM") projects like Shibboleth @shibboleth or
 Gluu @gluu exist, Keycloak provides an all-in-one solution, proving to be
 versatile enough for large organizations with complex access management schemes.
 Furthermore, the knowledge gained from implementing keycloak in the
