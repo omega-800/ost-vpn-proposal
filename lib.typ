@@ -147,11 +147,12 @@
       ..supporter("Nathanael Fässler", "nathanael.faessler@ost.ch"), 
       ..supporter("Nico Michael Rudolph", "nico.rudolph@ost.ch"), 
       ..supporter("Oliver Clerc", "oliver.clerc@ost.ch"), 
+      ..supporter("Ramon Bister", "ramon.bister@ost.ch"),
       ..supporter("Raphael Das Gupta", "raphael.dasgupta@ost.ch"), 
       ..supporter("Samuel Meuli", "samuel.meuli@ost.ch"), 
       ..supporter("Simon Böni", "simon.boeni@ost.ch"), 
       ..supporter("Stefan F. Keller", "stefan.keller@ost.ch"), 
-      ..supporter("Ramon Bister", "ramon.bister@ost.ch"),
+      ..supporter("Yannick Ott", "yannick.ott@ost.ch"),
     ), caption: "Supporters",
   )
 
