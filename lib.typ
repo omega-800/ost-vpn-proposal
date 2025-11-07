@@ -14,6 +14,14 @@
     page: "Page", chapter: "Chapter", toc: "Contents", term: "Term", definition: "Definition", summary: "Summary",
   ),
 )
+#let glossary-entry(name, description) = {
+  figure([
+    #grid(columns: (3fr, 8fr), gutter: 5mm, [
+      #align(left, text(size: 12pt, [*#name*]))
+    ], align(left, description))
+    #line(length: 100%, stroke: 0.5pt + rgb("#c4c4c4"))
+  ], kind: "glossary-entry", supplement: name)
+}
 #let infoblock(title, ..content) = [
   #assert(
     title != none and title != "", message: "Sorry, Block title is required.",
@@ -26,32 +34,6 @@
 #let supporter = (name, email) => ([#name], [#link("mailto:" + email)])
 #let link-underline = luma(30)
 #let link-background = rgb("#fafafa")
-
-#let glossary-entry(name, description) = {
-  figure([
-    #grid(columns: (3fr, 8fr), gutter: 5mm, [
-      #align(left, text(size: 12pt, [*#name*]))
-    ], align(left, description))
-    #line(length: 100%, stroke: 0.5pt + rgb("#c4c4c4"))
-  ], kind: "glossary-entry", supplement: name)
-}
-#let glossary = (
-  OSS: ( desc: [Open Source Software], link: <oss>),
-  OER:(desc: [ Open Educational Resources ],link: <oer>),
-  OTP:(desc: [ One Time Password ],link: <otp>),
-  FOSS:(desc: [ Free and Open Source Software ],link: <foss>),
-  SSO:(desc: [ Single Sign-On ],link: <sso>),
-  SAMLv2:(desc: [ Security Assertion Markup Language 2.0 ],link: <saml>),
-  SSL:(desc: [ Secure Sockets Layer ],link: <ssl>),
-  VPN:(desc: [ Virtual Private Network ],link: <vpn>),
-  EntraID:(desc: [ Microsoft Entra ID (formerly known as Microsoft Azure Active Directory or Azure AD) ],link: <entraid>),
-  IAM:(desc: [ Identity and Access Management ],link: <iam>),
-  IT:(desc: [ Information Technology ],link: <it>),
-)
-#let g = (k) => link(glossary.at(k).link, k)
-#let outline-glossary = () => glossary.pairs().map(((k,v)) => 
-  [#glossary-entry(k, v.desc) #v.link]
-).join()
 
 #let project(title: "", body) = {
  let subtitle = "Striving for a more open educational environment"
@@ -156,12 +138,6 @@
       ..supporter("Yannick Ott", "yannick.ott@ost.ch"),
     ), caption: "Supporters",
   )
-
-  pagebreak()
-
-  [= Glossary]
-
-  outline-glossary()
 
   pagebreak()
 

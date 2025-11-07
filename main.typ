@@ -2,6 +2,24 @@
 
 #show: project.with(title: "Proposal for changing the OST Auth solution")
 
+#let glossary = (
+  OSS: ( desc: [Open Source Software], link: <oss>),
+  OER:(desc: [ Open Educational Resources ],link: <oer>),
+  OTP:(desc: [ One Time Password ],link: <otp>),
+  FOSS:(desc: [ Free and Open Source Software ],link: <foss>),
+  SSO:(desc: [ Single Sign-On ],link: <sso>),
+  SAMLv2:(desc: [ Security Assertion Markup Language 2.0 ],link: <saml>),
+  SSL:(desc: [ Secure Sockets Layer ],link: <ssl>),
+  VPN:(desc: [ Virtual Private Network ],link: <vpn>),
+  EntraID:(desc: [ Microsoft Entra ID (formerly known as Microsoft Azure Active Directory or Azure AD) ],link: <entraid>),
+  IAM:(desc: [ Identity and Access Management ],link: <iam>),
+  IT:(desc: [ Information Technology ],link: <it>),
+)
+#let g = (k) => link(glossary.at(k).link, k)
+#let outline-glossary = () => glossary.pairs().map(((k,v)) => 
+  [#glossary-entry(k, v.desc) #v.link]
+).join()
+
 = Context
 
 The OST Auth Solution currently relies on #g("EntraID") (#g("SAMLv2")) for services such as
@@ -107,3 +125,10 @@ utilize an open source IAM framework like Keycloak, the full identity management
 process can be more easily taken over from EntraID by said framework. Further
 steps would include data migration, policy configuration, testing, monitoring
 and finally decomissioning EntraID.
+
+#pagebreak()
+
+= Glossary
+
+#outline-glossary()
+
