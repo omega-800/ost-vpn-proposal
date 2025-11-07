@@ -152,6 +152,7 @@
       ..supporter("Samuel Meuli", "samuel.meuli@ost.ch"), 
       ..supporter("Simon Böni", "simon.boeni@ost.ch"), 
       ..supporter("Stefan F. Keller", "stefan.keller@ost.ch"), 
+      ..supporter("Timon Erhart", "timon.erhart@ost.ch"), 
       ..supporter("Yannick Ott", "yannick.ott@ost.ch"),
     ), caption: "Supporters",
   )
