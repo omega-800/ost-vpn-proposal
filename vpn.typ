@@ -32,7 +32,7 @@ Notably, Andreas Steffen, the creator of StrongSwan @strongswan, has suggested
 its implementation for the OST VPN. Raphael Das Gupta also had inquired about an
 open-source alternative to Microsoft Authenticator @mauthalt.
 
-= Proposal
+= Argumentation
 
 In addition to providing privacy-compliant and non-discriminatory remote access
 to the OST Network, an alternative solution may enhance both performance and
@@ -52,6 +52,10 @@ checks, providing better data protection compared to SSL-based protocols. Its
 open-source nature allows for third-party audits and transparency, ensuring
 there are no undisclosed vulnerabilities. In contrast, Cisco's proprietary
 system limits visibility into the underlying security mechanisms.
+
+= Proposal
+
+Fully integrate StrongSwan, leveraging OST’s internal expertise to provide an alternative to the proprietary SSL-based remote-access system with a transparent, auditable, customizable solution that delivers superior security and high-traffic performance.
 
 #pagebreak()
 
